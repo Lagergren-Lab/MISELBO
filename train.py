@@ -67,9 +67,9 @@ def main(args):
 
     # if load
     checkpoint_file = os.path.join(args.save, 'checkpoint.pt')
-    if args.fine_tune and args.cont_training:
+    if args.train_new_q and args.cont_training:
         logging.info('loading q0.')
-        checkpoint_q0_file = os.path.join(args.save, f"checkpoint_0.pt")
+        checkpoint_q0_file = os.path.join(args.p_and_q1_path, f"checkpoint.pt")
         checkpoint_q0 = torch.load(checkpoint_q0_file, map_location='cpu')
         model_tmp = AutoEncoder(args, writer, arch_instance)
         model_tmp.load_state_dict(checkpoint_q0['state_dict'])
@@ -104,9 +104,9 @@ def main(args):
         grad_scalar.load_state_dict(checkpoint['grad_scalar'])
         cnn_scheduler.load_state_dict(checkpoint['scheduler'])
         global_step = checkpoint['global_step']
-    elif args.fine_tune:
+    elif args.train_new_q:
         logging.info('loading the model.')
-        checkpoint_q0_file = os.path.join(args.save, f"checkpoint_0.pt")
+        checkpoint_q0_file = os.path.join(args.p_and_q1_path, f"checkpoint.pt")
         checkpoint_q0 = torch.load(checkpoint_q0_file, map_location='cpu')
         model_tmp = AutoEncoder(args, writer, arch_instance)
         model_tmp.load_state_dict(checkpoint_q0['state_dict'])
@@ -484,8 +484,11 @@ if __name__ == '__main__':
                         help='address for master')
     parser.add_argument('--seed', type=int, default=1,
                         help='seed used for initialization')
-    parser.add_argument('--fine_tune', action='store_true', default=False,
+    # MISELBO train new q stuff
+    parser.add_argument('--train_new_q', action='store_true', default=False,
                         help='train new q')
+    parser.add_argument('--p_and_q1_path', type=str, default='exp',
+                        help='path to trained model with p and q (theta and phi)')
     parser.add_argument('--param_check', action='store_true', default=False,
                         help='Add check that ensures theta is not trained and phi is trained for new q')
     args = parser.parse_args()

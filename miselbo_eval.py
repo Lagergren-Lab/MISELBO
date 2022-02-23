@@ -326,9 +326,9 @@ def compare_parameters(model_0, model_1, logging):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('encoder decoder examiner')
     # experimental results
-    parser.add_argument('--q0', type=str, default='results/eval-exp_test/checkpoint_0.pt',
+    parser.add_argument('--q0', type=str, default='models/NVAE/q1seed3_q2seed0/p_and_q1/checkpoint.pt',
                         help='location of the checkpoint of q0')
-    parser.add_argument('--q1', type=str, default='None',
+    parser.add_argument('--q1', type=str, default='models/NVAE/q1seed3_q2seed0/p_and_q2/checkpoint.pt',
                         help='location of the checkpoint of q1')
     parser.add_argument('--q2', type=str, default='None',
                         help='location of the checkpoint of q2')
