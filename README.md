@@ -10,7 +10,8 @@
 <br>
 <br>
 
-[MISELBO](https://arxiv.org/abs/2202.10951)
+[MISELBO](https://arxiv.org/abs/2202.10951) is a framework for evaluating an ensemble of variational distributions trained against a common target distribution. In this repository, we provide code and instructions on how to reproduce the results of the paper. 
+More generally, this can e.g. be used as an example on how to train and evaluate deep generative ensembles of encoders for Variational Autoencoders, or to gain a multimodal variational distribution from a set of diverse unimodal variational distributions.
 
 <p align="center">
     <img src="img/miselbo-framework.png" width="800">
@@ -26,9 +27,9 @@ model:
 
 To train addtional q<sub>&Phi;<sub>i</sub></sub>:
 ``` 
-train.py --train_new_q True --seed "seed != seed of q_0" "same arguments as q_0" 
+train.py --train_new_q True --seed "seed != seed of q_1" "same arguments as when training q_1 and p" 
 ```
-The train_new_q argument ensures that the decoder is not trained.
+The train_new_q argument ensures that the decoder of p is not trained.
 
 ## Reproducing MISELBO-NVAE results using already trained p<sub>&theta;</sub>, q<sub>&Phi;<sub>1</sub></sub> and q<sub>&Phi;<sub>2</sub></sub>
 The NVAE models trained for five different seeds, used in table 3 of [MISELBO](https://arxiv.org/), are too 
@@ -36,14 +37,13 @@ large to put in this repo. Therefore, one model is selected: p<sub>&theta;</sub>
 with seed = 3 and q<sub>&Phi;<sub>2</sub></sub> trained with seed = 0. In order to run MISELBO for this ensemble follow
 the steps below:
 1. Follow steps 1-3 from the previous section.
-2. Copy "models" folder, including subfolders and files to the NVAE root folder.
-3. Install MISELBO specific packages using the requirements.txt file.
-4. In the NVAE root folder, run command:
+2. Fetch the "trained_ensemble" branch of this repo (git LFS is needed since the model files are 671MB in total).
+3. Copy "models" folder, including subfolders and files to the NVAE root folder.
+4. Install MISELBO specific package: pandas.
+5. In the NVAE root folder, run command:
 ``` 
 python miselbo_eval.py 
 ```
-
-## MISELBO for own model
 
 
 
