@@ -10,7 +10,7 @@
 <br>
 <br>
 
-[MISELBO](https://arxiv.org/) (actual arxiv link will soon be added) .
+[MISELBO](https://arxiv.org/abs/2202.10951)
 
 <p align="center">
     <img src="img/miselbo-framework.png" width="800">
