@@ -11,7 +11,7 @@
 <br>
 
 [MISELBO](https://arxiv.org/abs/2202.10951) is a framework for evaluating an ensemble of variational distributions trained against a common target distribution. In this repository, we provide code and instructions on how to reproduce the results of the paper. 
-More generally, this can e.g. be used as an example on how to train and evaluate deep generative ensembles of encoders for Variational Autoencoders, or to gain a multimodal variational distribution from a set of diverse unimodal variational distributions.
+More generally, this can e.g. be used as a template on how to train and evaluate deep generative ensembles of encoders for Variational Autoencoders, or to gain a multimodal variational distribution from a set of diverse unimodal variational distributions.
 
 <p align="center">
     <img src="img/miselbo-framework.png" width="800">
