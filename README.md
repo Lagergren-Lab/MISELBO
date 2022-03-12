@@ -23,9 +23,9 @@ model:
 1. Clone the NVAE [repository](https://github.com/NVlabs/NVAE).
 2. Clone this repository. 
 3. Replace/add the files "train.py", "model.py" and "miselbo_eval.py" from this repository to the NVAE repo.
-4. Follow the instructions for MNIST in the Readme of NVAE to train p<sub>&theta;</sub> and q<sub>&Phi;<sub>1</sub></sub>.
+4. Follow the instructions for MNIST in the NVAE repository Readme to train p<sub>&theta;</sub> and q<sub>&Phi;<sub>1</sub></sub>.
 
-To train addtional q<sub>&Phi;<sub>i</sub></sub>:
+To train additional q<sub>&Phi;<sub>i</sub></sub>:
 ``` 
 train.py --train_new_q True --seed "seed != seed of q_1" "same arguments as when training q_1 and p" 
 ```
@@ -37,8 +37,8 @@ large to put in this repo. Therefore, one model is selected: p<sub>&theta;</sub>
 with seed = 3 and q<sub>&Phi;<sub>2</sub></sub> trained with seed = 0. In order to run MISELBO for this ensemble follow
 the steps below:
 1. Follow steps 1-3 from the previous section.
-2. Fetch the "trained_ensemble" branch of this repo (git LFS is needed since the model files are 671MB in total).
-3. Copy "models" folder, including subfolders and files to the NVAE root folder.
+2. Fetch the "trained_ensemble" branch of this repo ([git LFS](https://git-lfs.github.com/) is needed since the model files are 671MB in total).
+3. Copy the "models" folder, including subfolders and files to the NVAE root folder.
 4. Install MISELBO specific package: pandas.
 5. In the NVAE root folder, run command:
 ``` 
