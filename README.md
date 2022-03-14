@@ -45,6 +45,13 @@ the steps below:
 python miselbo_eval.py 
 ```
 
+## Reproducing other experiments
+### 5.1.1 Ensembling Variational Approximations
+To reproduce the results of Table 2 and plots in Figure 2 do:
+1. Install pytorch 1.8.0, seaborn, matplotlib and scipy with dependencies.
+2. Run the "vi_approx_experiment.py" file in the "Other experiments/5.1.1 Ensembling Variational Approximations"-folder
 
+### 5.1.2 JSD as a Diversity Metric and Visualizing ∆L
 
+### 5.3 Phylogenetic Tree Inference
 
