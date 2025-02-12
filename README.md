@@ -37,7 +37,7 @@ large to put in this repo. Therefore, one model is selected: p<sub>&theta;</sub>
 with seed = 3 and q<sub>&Phi;<sub>2</sub></sub> trained with seed = 0. In order to run MISELBO for this ensemble follow
 the steps below:
 1. Follow steps 1-3 from the previous section.
-2. Download the "models" folder containing the trained models at [MISELBO OneDrive][https://kth-my.sharepoint.com/:f:/g/personal/haraldme_ug_kth_se/ErMB2PHTkFZEupSeD_VAng0BPHSK_0DEiHJtrvU5fCKi2A?e=BanhM0] (total 671Mb).
+2. Download the "models" folder containing the trained models at [MISELBO OneDrive](https://kth-my.sharepoint.com/:f:/g/personal/haraldme_ug_kth_se/ErMB2PHTkFZEupSeD_VAng0BPHSK_0DEiHJtrvU5fCKi2A?e=BanhM0) (total 671Mb).
 3. Copy the "models" folder, including subfolders and files to the NVAE root folder.
 4. Install MISELBO specific package: pandas.
 5. In the NVAE root folder, run command:
